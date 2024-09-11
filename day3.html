@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right,rgb(245, 232, 160) , rgb(248, 194, 43));
+        }
+        #first{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #second{
+            background-color:rgba(241, 215, 144, 0.973);
+            border: 20px ;
+            height: 400px;
+            width: 400px;
+            margin: 100px  420px;
+            padding:20px;
+            border: 2px solid rgb(230, 146, 36) ;
+            border-radius: 10px 60px 10px 60px;
+        }
+        #third{
+            padding-bottom: 50px;
+        }
+        #fourth{
+            padding-left: 110px;
+            color: rgb(230, 146, 36);
+            font-size: 18px;
+        }
+        #fourth input{
+            margin-bottom: 20px;
+        }
+        h1{
+            text-align: center;
+            color: rgb(252, 145, 5);
+            text-shadow: 1px 1px 3px #000000;
+        }
+        #fifth{
+            margin: 30px;
+            
+           
+        }
+        #fifth #button1 {
+            margin-left: 20px;
+            border-radius: 20px;
+            border-width: 0px;   
+            padding:10px;
+            color: white;
+            background-color:rgb(252, 145, 5);
+        }
+        #fifth #button2 {
+            margin-left: 150px;
+            border-radius: 20px;
+            border-width: 0px;   
+            padding:10px;
+            color: white;
+            background-color:rgb(252, 145, 5);
+
+        }
+        #six{
+            color: rgb(252, 145, 5);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            margin-left: 75px;
+            font-weight: 1000;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="first">
+        <div id="second">
+            <div id="third">
+                <h1>TODO LIST</h1>
+            </div>
+        <div id="fourth">
+            <input type="checkbox" id="todo1" name="todo" onclick="strike_line('todo1')" >
+            <label for="todo1">Stay Hydrated</label><br>
+    
+            <input type="checkbox" id="todo2" name="todo" onclick="strike_line('todo2')">
+            <label for="todo2">Exercise</label><br>
+    
+            <input type="checkbox" id="todo3" name="todo" onclick="strike_line('todo3')" >
+            <label for="todo3">Complete Project</label><br>
+    
+            <input type="checkbox" id="todo4" name="todo" onclick="strike_line('todo4')" >
+            <label for="todo4">Clean</label><br>
+
+        </div>
+        <div id="fifth">
+            <input type="button" value="Select All" onclick="all_select('todo')" id="button1">
+            <input type="button" value="Clear" onclick="all_clear('todo')" id="button2">
+            <!-- <input type="button" value="Add New" onclick="add()" id="new"> -->
+
+        </div>
+        <P id =six></P>
+            
+        </div>
+        
+    </div>
+    <script>
+        function strike_line(checkid){
+            let a = document.getElementById(checkid);
+            let label = document.querySelector(`label[for=${checkid}]`);
+            if (a.checked) {
+                label.style.textDecoration = "line-through";
+            }else{
+                label.style.textDecoration = "none";
+            }
+        }
+        function all_select(name){
+            let b= document.getElementsByName(name);
+            for(let i = 0;i<b.length;i++)
+            {
+                if(b[i].type=='checkbox')  
+                    b[i].checked=true;
+                
+                    let label = document.querySelector(`label[for=${b[i].id}]`);
+                    label.style.textDecoration = "line-through";
+            }
+             document.getElementById("six").innerHTML ="GREAT! YOU COMPLETE THE LIST";
+             setTimeout(function() {
+                document.getElementById("six").innerHTML = "";
+            }, 2000);
+
+        }
+        function all_clear(name){
+            let b= document.getElementsByName(name);
+            for(let i = 0;i<b.length;i++)
+            {
+                if(b[i].type=='checkbox')  
+                    b[i].checked=false;
+
+                    let label = document.querySelector(`label[for=${b[i].id}]`);
+                    label.style.textDecoration = "none";
+            }
+        }
+        
+
+    </script>
+    
+</body>
+</html>
