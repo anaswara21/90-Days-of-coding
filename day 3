@@ -7,13 +7,15 @@
     <title>Document</title>
     <style>
         body{
-            background-image: linear-gradient(to right,rgb(245, 232, 160) , rgb(248, 194, 43));
+            /* background-image: linear-gradient(to right,rgb(245, 232, 160) , rgb(248, 194, 43)); */
+            /* background-image: linear-gradient(to right,rgb(136, 126, 96) , rgb(34, 28, 10)); */
+            background-image: linear-gradient(to right,rgb(252, 207, 73) ,rgb(32, 26, 7));
         }
         #first{
             font-family: 'Times New Roman', Times, serif;
         }
         #second{
-            background-color:rgba(241, 215, 144, 0.973);
+            /* background-color:rgba(241, 215, 144, 0.973); */
             border: 20px ;
             height: 400px;
             width: 400px;
@@ -21,11 +23,15 @@
             padding:20px;
             border: 2px solid rgb(230, 146, 36) ;
             border-radius: 10px 60px 10px 60px;
+            background-color: #000000;
         }
         #third{
             padding-bottom: 50px;
         }
         #fourth{
+            float: left;
+            height: 200px;
+            width: 200px;
             padding-left: 70px;
             color: rgb(230, 146, 36);
             font-size: 18px;
@@ -39,57 +45,47 @@
             text-shadow: 1px 1px 3px #000000;
         }
         #fifth{
-            margin: 30px;
-                     
-           
+            height: 240px;
+            width: 400px;
         }
         #fifth #button1 {
-            margin-left: 20px;
-            border-radius: 20px;
+            margin-left: 60px;
+            border-radius: 15px;
             border-width: 0px;   
             padding:10px;
             color: white;
             background-color:rgb(252, 145, 5);
         }
         #fifth #button2 {
-            margin-left: 150px;
-            border-radius: 20px;
+            margin-left: 140px;
+            border-radius: 15px;
             border-width: 0px;   
             padding:10px;
             color: white;
             background-color:rgb(252, 145, 5);
-
         }
         #six{
             color: rgb(252, 145, 5);
             font-family: 'Times New Roman', Times, serif;
             font-size: 15px;
-            margin-left: 75px;
             font-weight: 1000;
-            
+            padding-left: 70px;
         }
-        
         .button_cls{
-            border: 5px solid rgb(252, 145, 5);
+            border: 4px solid rgb(252, 145, 5);
             border-radius: 5px;
+            margin-left: 25px;
+            margin-bottom: 14px;
             color: white;
             background-color: rgb(252, 145, 5);
             font-size: x-small;
-            
-            
         }
-        #del1{
-            margin-left: 100px;
+        #ten{
+            float:right;
+            height: 200px;
+            width:130px;  
         }
-        #del2{
-            margin-left: 140px; 
-        }
-        #del3{
-            margin-left:77px;
-        }
-        #del4{
-            margin-left: 160px; 
-        }
+        
         
     </style>
 </head>
@@ -102,22 +98,32 @@
         <div id="fourth">
             
             <input type="checkbox" id="todo1" name="todo" onclick="strike_line('todo1')" >
-            <label for="todo1">Stay Hydrated</label>
-            <input type="button" value="X" id="del1" class="button_cls"onclick="delete_todo('del1','todo1')"><br>
+            <label for="todo1">Stay Hydrated</label><br>
+           
             
             
     
             <input type="checkbox" id="todo2" name="todo" onclick="strike_line('todo2')">
-            <label for="todo2">Exercise</label>
-            <input type="button" value="X" id="del2" class="button_cls" onclick="delete_todo('del2','todo2')"><br>
+            <label for="todo2">Exercise</label><br>
+            
     
             <input type="checkbox" id="todo3" name="todo" onclick="strike_line('todo3')" >
-            <label for="todo3">Complete Project</label>
-            <input type="button" value="X" id="del3" class="button_cls" onclick="delete_todo('del3','todo3')"><br>
+            <label for="todo3">Complete Project</label><br>
+            
     
             <input type="checkbox" id="todo4" name="todo" onclick="strike_line('todo4')" >
-            <label for="todo4">Clean</label>
+            <label for="todo4">Clean</label><br>
+            
+
+        </div>
+        <div id="ten">
+            
+            <input type="button" value="X" id="del1" class="button_cls"onclick="delete_todo('del1','todo1')"><br>
+            <input type="button" value="X" id="del2" class="button_cls" onclick="delete_todo('del2','todo2')"><br>
+            <input type="button" value="X" id="del3" class="button_cls" onclick="delete_todo('del3','todo3')"><br>
             <input type="button" value="X" id="del4" class="button_cls" onclick="delete_todo('del4','todo4')"><br>
+            
+            
 
         </div>
         <div id="fifth">
